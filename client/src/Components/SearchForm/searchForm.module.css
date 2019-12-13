@@ -1,0 +1,76 @@
+
+.form {
+    width: 100%;
+}
+
+.form input[type="text"] {
+    padding: .8rem 3rem;
+    border-radius: 3px;
+    border: 1px solid var(--grey-color-5);
+    width: 25rem;
+}
+
+.form input[type='text']:focus {
+    border: 1px solid var(--grey-color-2);
+}
+
+.formPlace {
+    padding:.9rem 3rem;
+    border-right: 3px;
+    border: 1px solid var(--grey-color-5);
+    background-color: var(--white-color);
+    width: 25rem;
+}
+
+.inputControlContainer {
+    position: relative;
+}
+
+.inputControlContainer .inputControl:first-child input {
+    border-right: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.inputControlContainer .inputControl:last-child input {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: none;
+    padding-left: 4rem;
+}
+
+.inputControlContainer .inputControl:last-child svg {
+    left:2rem;
+}
+
+.inputControl {
+    position: relative;
+}
+
+.inputControl:last-child button {
+    background-color: var(--green-color-1);
+    padding:1rem 1.2rem;
+    margin-top: 1.5rem;
+    border-radius: 3px;
+    color: var(--white-color);
+    font-weight: 700;
+    transition: background-color .2s ease-in-out;
+}
+
+.inputControl:last-child button:hover {
+    background-color: var(--green-color-2);
+}
+
+.formIcons {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    fill: var(--grey-color-3);
+    width: 2rem;
+    height: 2rem;
+}
+
+.formLabel {
+    display: block;
+    margin-bottom: .5rem;
+}

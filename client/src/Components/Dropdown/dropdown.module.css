@@ -1,0 +1,41 @@
+.dropdown {
+    position: absolute;
+    background-color: var(--white-color);
+    width: 25rem;
+    border: 1px solid var(--grey-color-5);
+    margin-top: .5rem;
+    padding:0 1rem;
+}
+
+.dropdown h1 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.dropdown span {
+    font-size: 1.2rem;
+    color: var(--grey-color-3);
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem 0rem;
+    border-bottom: 1px solid var(--grey-color-5);
+}
+
+.dropdownItem div:last-child span {
+    padding:.8rem 1.2rem;
+    font-size: 1.6rem;
+    border: 1px solid var(--grey-color-1);
+    border-radius: 3px;
+}
+
+.dropdownItem:last-child {
+    border: none;
+}
+
+.dropdownItem button {
+    font-size: 2.2rem;
+}

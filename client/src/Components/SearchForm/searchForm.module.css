@@ -91,7 +91,22 @@
     height: 8px;
     border-radius: 50%;
     background:var(--green-color-1);
-  } 
+  }
+  
+  .calendarContainer {
+    padding:.9rem 0rem;
+    padding-left: 3rem;
+    border-right: 3px;
+    border: 1px solid var(--grey-color-5);
+    background-color: var(--white-color);
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
 .formPlace {
     padding:.9rem 1rem;
@@ -104,27 +119,32 @@
     justify-content: space-between;
     font-size: 1.4rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .inputControlContainer {
     position: relative;
 }
 
-.inputControlContainer .inputControl:first-child input {
+.inputControlContainer:first-child .inputControl:first-child input {
     border-right: none;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
 
-.inputControlContainer .inputControl:last-child input {
+.inputControlContainer:first-child .inputControl:last-child input {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     border-left: none;
     padding-left: 4rem;
 }
 
-.inputControlContainer .inputControl:last-child svg {
+.inputControlContainer:first-child .inputControl:last-child svg {
     left:2rem;
+}
+
+.inputControlContainer:last-child {
+    display: flex;
 }
 
 .inputControl {

@@ -171,11 +171,13 @@ export const SearchForm = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`${style.inputControl} ml-1`}>
-                    <label className={style.formLabel} htmlFor='whenGo'>Go</label>
-                    <div>
-                        <IoMdCalendar className={style.formIcons} />
-                        <SearchInput name='whenGo' type='text' value={whenGo} onChange={handleChange} placeholder={customizedDate} />
+                <div className={style.inputControlContainer}>
+                    <div className={`${style.inputControl} ml-1`}>
+                        <label className={style.formLabel} htmlFor='whenGo'>Go</label>
+                        <div className={style.calendarContainer}>
+                            <IoMdCalendar className={style.formIcons} />
+                            {customizedDate}
+                        </div>
                     </div>
                 </div>
                 <div className={`${style.inputControl} pos-relative ml-1`}>

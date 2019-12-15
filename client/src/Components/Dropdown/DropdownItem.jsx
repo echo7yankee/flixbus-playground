@@ -15,7 +15,7 @@ export const DropdownItem = ({ title, info, increaseCount, decreaseCount, count 
             <div className='dflex'>
                 {count === 0 ? null : <button onClick={decreaseCount}>-</button>}
                 <span>{count}</span>
-                <button onClick={increaseCount}>+</button>
+                <button onClick={count >= 9 ? null : increaseCount}>+</button>
             </div>
         </div>
     )

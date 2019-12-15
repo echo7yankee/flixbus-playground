@@ -3,7 +3,7 @@ import React from 'react';
 //style
 import style from './dropdown.module.css'
 
-export const DropdownItem = ({ title, info, onClick, count }) => {
+export const DropdownItem = ({ title, info, increaseCount, decreaseCount, count }) => {
     return (
         <div className={style.dropdownItem}>
             <div>
@@ -13,9 +13,9 @@ export const DropdownItem = ({ title, info, onClick, count }) => {
                 <span>{info}</span>
             </div>
             <div className='dflex'>
-                <button>-</button>
+                <button onClick={decreaseCount}>-</button>
                 <span>{count}</span>
-                <button onClick={onClick}>+</button>
+                <button onClick={increaseCount}>+</button>
             </div>
         </div>
     )

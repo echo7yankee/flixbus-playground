@@ -66,8 +66,9 @@ export const SearchForm = () => {
         console.log(reservation);
     }
 
-    const handleIncreaseCount = (type) => {
-        if (type === 'Adults') {
+    const handleCount = (type, isIncrease) => {
+        //INCREASES THE COUNT
+        if (type === 'Adults' && isIncrease === true) {
             setReservation({
                 ...reservation,
                 place: {
@@ -75,7 +76,7 @@ export const SearchForm = () => {
                     adults: place.adults + 1
                 }
             })
-        } else if (type === 'Children') {
+        } else if (type === 'Children' && isIncrease === true) {
             setReservation({
                 ...reservation,
                 place: {
@@ -83,12 +84,39 @@ export const SearchForm = () => {
                     children: place.children + 1
                 }
             })
-        } else if (type === 'Bicycles') {
+        } else if (type === 'Bicycles' && isIncrease === true) {
             setReservation({
                 ...reservation,
                 place: {
                     ...reservation.place,
                     bicycle: place.bicycle + 1
+                }
+            })
+        }
+
+        //DEACREASES THE COUNT
+        if (type === 'Adults' && isIncrease === false) {
+            setReservation({
+                ...reservation,
+                place: {
+                    ...reservation.place,
+                    adults: place.adults - 1,
+                }
+            })
+        } else if (type === 'Children' && isIncrease === false) {
+            setReservation({
+                ...reservation,
+                place: {
+                    ...reservation.place,
+                    children: place.children - 1
+                }
+            })
+        } else if (type === 'Bicycles' && isIncrease === false) {
+            setReservation({
+                ...reservation,
+                place: {
+                    ...reservation.place,
+                    bicycle: place.bicycle - 1
                 }
             })
         }
@@ -104,6 +132,8 @@ export const SearchForm = () => {
 
     //customize place
     const customizedPlace = `${place.adults} ${place.adults > 1 ? 'adults' : 'adult'}, ${place.children}  ${place.children > 1 ? 'children' : 'child'},  ${place.bicycle} ${place.bicycle > 1 ? 'bicycles' : 'bicycle'}`
+
+    console.log(reservation)
 
     return (
         <form className={style.form} onSubmit={handleSubmit}>
@@ -145,7 +175,9 @@ export const SearchForm = () => {
                 <div className={`${style.inputControl} pos-relative ml-1`}>
                     <label className={style.formLabel} htmlFor="">Passangers/Bicycles</label>
                     <div className={style.formPlace} onClick={openDropdown}>{customizedPlace}</div>
-                    {isDropdown && <Dropdown place={reservation.place} handleIncreaseCount={handleIncreaseCount} />}
+                    {isDropdown && <Dropdown
+                        place={reservation.place}
+                        handleCount={handleCount} />}
                 </div>
                 <div className={`${style.inputControl} ml-1`}>
                     <button>Look</button>

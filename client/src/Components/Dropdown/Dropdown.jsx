@@ -4,7 +4,7 @@ import React from 'react';
 import style from './dropdown.module.css';
 import { DropdownItem } from './DropdownItem';
 
-export const Dropdown = ({ handleIncreaseCount, place }) => {
+export const Dropdown = ({ handleCount, place }) => {
 
     //dropdown data
     const adultTitle = 'Adults';
@@ -16,9 +16,24 @@ export const Dropdown = ({ handleIncreaseCount, place }) => {
 
     return (
         <div className={style.dropdown}>
-            <DropdownItem count={place.adults} onClick={() => handleIncreaseCount(adultTitle)} title={adultTitle} info={adultInfo} />
-            <DropdownItem count={place.children} onClick={() => handleIncreaseCount(childrenTitle)} title={childrenTitle} info={childrenInfo} />
-            <DropdownItem count={place.bicycle} onClick={() => handleIncreaseCount(bicycleTitle)} title={bicycleTitle} info={bicycleInfo} />
+            <DropdownItem
+                count={place.adults}
+                increaseCount={() => handleCount(adultTitle, true)}
+                decreaseCount={() => handleCount(adultTitle, false)}
+                title={adultTitle}
+                info={adultInfo} />
+            <DropdownItem
+                count={place.children}
+                increaseCount={() => handleCount(childrenTitle, true)}
+                decreaseCount={() => handleCount(childrenTitle, false)}
+                title={childrenTitle}
+                info={childrenInfo} />
+            <DropdownItem
+                count={place.bicycle}
+                increaseCount={() => handleCount(bicycleTitle, true)}
+                decreaseCount={() => handleCount(bicycleTitle, false)}
+                title={bicycleTitle}
+                info={bicycleInfo} />
         </div>
     )
 }

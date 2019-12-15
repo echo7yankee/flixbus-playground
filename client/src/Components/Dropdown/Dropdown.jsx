@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 //style
 import style from './dropdown.module.css';
+
+//Components
+import { useOutsideClose } from '../CloseDropdown/CloseDropdown';
 import { DropdownItem } from './DropdownItem';
 
-export const Dropdown = ({ handleCount, place }) => {
+export const Dropdown = ({ handleCount, place, closeDropdown }) => {
+
+    //close dropdown
+    const wrapperRef = useRef(null);
+    useOutsideClose(wrapperRef, closeDropdown);
 
     //dropdown data
     const adultTitle = 'Adults';
@@ -15,7 +22,7 @@ export const Dropdown = ({ handleCount, place }) => {
     const bicycleInfo = 'Electronic bicycles are not allowed in the bus';
 
     return (
-        <div className={style.dropdown}>
+        <div className={style.dropdown} ref={wrapperRef}>
             <DropdownItem
                 count={place.adults}
                 increaseCount={() => handleCount(adultTitle, true)}

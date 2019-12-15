@@ -60,6 +60,10 @@ export const SearchForm = () => {
         setIsDropdown(true);
     }
 
+    const closeDropdown = () => {
+        setIsDropdown(false);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -177,7 +181,8 @@ export const SearchForm = () => {
                     <div className={style.formPlace} onClick={openDropdown}>{customizedPlace}</div>
                     {isDropdown && <Dropdown
                         place={reservation.place}
-                        handleCount={handleCount} />}
+                        handleCount={handleCount}
+                        closeDropdown={closeDropdown} />}
                 </div>
                 <div className={`${style.inputControl} ml-1`}>
                     <button>Look</button>

@@ -142,12 +142,14 @@ export const SearchForm = () => {
     return (
         <form className={style.form} onSubmit={handleSubmit}>
             <div className='dflex'>
-                <div>
+                <div className={style.inputRadioControl}>
                     <SearchInput check={GO} name='radio' type='radio' value={radio} onChange={handleChange} placeholder='' />
+                    <span className={style.checkmark}></span>
                     <label htmlFor={GO}>Go</label>
                 </div>
-                <div>
+                <div className={style.inputRadioControl}>
                     <SearchInput check={GOBACK} name='radio' type='radio' value={radio} onChange={handleChange} placeholder='' />
+                    <span className={style.checkmark}></span>
                     <label htmlFor={GOBACK}>Go-Back</label>
                 </div>
             </div>

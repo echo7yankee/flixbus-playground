@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 //style
 import style from './searchForm.module.css';
-import { IoMdPin, IoMdCalendar, IoMdRepeat } from 'react-icons/io';
+import { IoMdPin, IoMdCalendar, IoMdRepeat, IoIosArrowForward } from 'react-icons/io';
 
 //Components
 import { SearchInput } from '../SearchInput/SearchInput'
@@ -178,7 +178,10 @@ export const SearchForm = () => {
                 </div>
                 <div className={`${style.inputControl} pos-relative ml-1`}>
                     <label className={style.formLabel} htmlFor="">Passangers/Bicycles</label>
-                    <div className={style.formPlace} onClick={openDropdown}>{customizedPlace}</div>
+                    <div className={style.formPlace} onClick={openDropdown}>
+                        {customizedPlace}
+                        <IoIosArrowForward className={isDropdown ? 'rotate-90' : 'rotate-0'} />
+                    </div>
                     {isDropdown && <Dropdown
                         place={reservation.place}
                         handleCount={handleCount}

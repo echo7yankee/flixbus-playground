@@ -77,6 +77,16 @@ button {
   justify-content: space-between;
 }
 
+.rotate-90 {
+  transform: rotate(90deg);
+  transition: transform .3s ease-in-out;
+}
+
+.rotate-0 {
+  transform: rotate(0deg);
+  transition: transform .3s ease-in-out;
+}
+
 .rotate-180 {
   top: 55%;
   right: 50%;

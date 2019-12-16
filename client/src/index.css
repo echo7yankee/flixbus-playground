@@ -28,6 +28,8 @@ html {
   --red-color-3:#DE4C4A;
   --green-color-1: #0ba80b;
   --green-color-2: #09c009;
+  --blue-color-1:#205f99;
+  --blue-color-2:#b5dbff;
 
 }
 
@@ -80,6 +82,15 @@ button {
 .error {
   background-color: var(--red-color-2);
   color: var(--red-color-1);
+  border-radius: 3px;
+  padding: .4rem .6rem;
+  font-size: 1.3rem;
+  margin: .8rem 0;
+}
+
+.warning {
+  background-color: var(--blue-color-2);
+  color: var(--blue-color-1);
   border-radius: 3px;
   padding: .4rem .6rem;
   font-size: 1.3rem;

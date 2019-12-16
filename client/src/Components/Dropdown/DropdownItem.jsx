@@ -20,7 +20,7 @@ export const DropdownItem = ({ title, info, increaseCount, decreaseCount, count,
                 </div>
             </div>
             {count >= 9 && <div className='set-center'>
-                <p className='error mb-0'>{dropdownMessageLimitCount}</p>
+                <p className='warning mb-0'>{dropdownMessageLimitCount}</p>
             </div>}
         </div>
     )

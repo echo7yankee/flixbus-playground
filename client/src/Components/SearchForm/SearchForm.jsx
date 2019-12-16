@@ -137,9 +137,10 @@ export const SearchForm = () => {
     //customize place
     const customizedPlace = `${place.adults} ${place.adults > 1 ? 'adults' : 'adult'}, ${place.children}  ${place.children > 1 ? 'children' : 'child'},  ${place.bicycle} ${place.bicycle > 1 ? 'bicycles' : 'bicycle'}`
 
-
-    console.log(reservation)
+    //Dropdown count limit message
     const dropdownMessageLimitCount = "The count can't be more than 9";
+
+    console.log(isDropdown)
 
     return (
         <form className={style.form} onSubmit={handleSubmit}>

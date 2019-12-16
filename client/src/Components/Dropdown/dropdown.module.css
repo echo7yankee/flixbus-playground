@@ -17,12 +17,16 @@
     color: var(--grey-color-3);
 }
 
+
+.dropdownItemContainer {
+    padding: 2.5rem 0rem;
+    border-bottom: 1px solid var(--grey-color-5);
+}
+
 .dropdownItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2.5rem 0rem;
-    border-bottom: 1px solid var(--grey-color-5);
 }
 
 .dropdownItem div:last-child span {

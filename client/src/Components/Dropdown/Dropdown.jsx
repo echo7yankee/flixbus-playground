@@ -7,7 +7,7 @@ import style from './dropdown.module.css';
 import { useOutsideClose } from '../CloseDropdown/CloseDropdown';
 import { DropdownItem } from './DropdownItem';
 
-export const Dropdown = ({ handleCount, place, closeDropdown }) => {
+export const Dropdown = ({ handleCount, place, closeDropdown, dropdownMessageLimitCount }) => {
 
     //close dropdown
     const wrapperRef = useRef(null);
@@ -28,19 +28,24 @@ export const Dropdown = ({ handleCount, place, closeDropdown }) => {
                 increaseCount={() => handleCount(adultTitle, true)}
                 decreaseCount={() => handleCount(adultTitle, false)}
                 title={adultTitle}
-                info={adultInfo} />
+                info={adultInfo}
+                dropdownMessageLimitCount={dropdownMessageLimitCount} />
             <DropdownItem
                 count={place.children}
                 increaseCount={() => handleCount(childrenTitle, true)}
                 decreaseCount={() => handleCount(childrenTitle, false)}
                 title={childrenTitle}
-                info={childrenInfo} />
+                info={childrenInfo}
+                dropdownMessageLimitCount={dropdownMessageLimitCount}
+            />
             <DropdownItem
                 count={place.bicycle}
                 increaseCount={() => handleCount(bicycleTitle, true)}
                 decreaseCount={() => handleCount(bicycleTitle, false)}
                 title={bicycleTitle}
-                info={bicycleInfo} />
+                info={bicycleInfo}
+                dropdownMessageLimitCount={dropdownMessageLimitCount}
+            />
         </div>
     )
 }

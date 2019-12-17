@@ -209,7 +209,7 @@ export const SearchForm = () => {
                     <label className={style.formLabel} htmlFor="">Passangers/Bicycles</label>
                     <div className={style.formPlace} onClick={openDropdown}>
                         {customizedPlace}
-                        <IoIosArrowForward className={isDropdown ? 'rotate-90' : 'rotate-0'} />
+                        <span className="ml-1"><IoIosArrowForward className={isDropdown ? 'rotate-90' : 'rotate-0'} /></span>
                     </div>
                     {isDropdown && <Dropdown
                         place={reservation.place}

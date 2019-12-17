@@ -199,7 +199,7 @@ export const SearchForm = () => {
                             <IoMdCalendar className={style.formIcons} />
                             <div className={`dflex ${reservation.radio === GOBACK ? 'twoCalendarInput' : 'oneCalendarInput'}`}>
                                 <Calendar today={customizedDate} onDayChange={handleDayChange} isFirstCalendar={true} />
-                                {reservation.radio === GOBACK && <Calendar onDayChange={handleDayChange} isFirstCalendar={false} />}
+                                {reservation.radio === GOBACK && <Calendar today={customizedDate} onDayChange={handleDayChange} isFirstCalendar={false} />}
                             </div>
                             {/* {customizedDate} */}
                         </div>

@@ -98,6 +98,7 @@
     border-radius: 5px;
     border: 1px solid var(--grey-color-5);
     font-size: 1.4rem;
+    cursor: pointer;
   }
 
   .calendarContainer input::placeholder {
@@ -108,7 +109,7 @@
     padding:.9rem 1rem;
     border-right: 3px;
     border: 1px solid var(--grey-color-5);
-    background-color: var(--white-color);
+    background-color: white;
     flex: 0 50%;
     display: flex;
     align-items: center;

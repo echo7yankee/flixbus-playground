@@ -14,7 +14,7 @@ import { GO, GOBACK } from '../../Constants/constants';
 export const SearchForm = () => {
 
     const initState = {
-        radio: '',
+        radio: GO,
         to: '',
         from: '',
         whenGo: '',
@@ -127,7 +127,12 @@ export const SearchForm = () => {
         }
     }
 
-    const handleDayChange = (day, isFirstCalendar) => {
+    const handleDayChange = (day, modifiers, isFirstCalendar) => {
+
+        if (modifiers.disabled) {
+            return;
+        }
+
         if (isFirstCalendar) {
             setReservation({
                 ...reservation,
@@ -155,7 +160,7 @@ export const SearchForm = () => {
     //Dropdown count limit message
     const dropdownMessageLimitCount = "The count can't be more than 9";
 
-    console.log(reservation)
+    // console.log(reservation)
 
     return (
         <form className={style.form} onSubmit={handleSubmit}>
@@ -198,8 +203,17 @@ export const SearchForm = () => {
                         <div className={style.calendarContainer}>
                             <IoMdCalendar className={style.formIcons} />
                             <div className={`dflex ${reservation.radio === GOBACK ? 'twoCalendarInput' : 'oneCalendarInput'}`}>
-                                <Calendar today={customizedDate} onDayChange={handleDayChange} isFirstCalendar={true} />
-                                {reservation.radio === GOBACK && <Calendar today={customizedDate} onDayChange={handleDayChange} isFirstCalendar={false} />}
+                                <Calendar
+                                    today={customizedDate}
+                                    onDayChange={handleDayChange}
+                                    beforeDate={null}
+                                    isFirstCalendar={true} />
+                                {reservation.radio === GOBACK &&
+                                    <Calendar
+                                        beforeDate={reservation.whenGo}
+                                        today={customizedDate}
+                                        onDayChange={handleDayChange}
+                                        isFirstCalendar={false} />}
                             </div>
                             {/* {customizedDate} */}
                         </div>

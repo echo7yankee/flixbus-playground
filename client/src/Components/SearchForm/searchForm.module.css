@@ -7,7 +7,7 @@
     padding: .8rem 3rem;
     border-radius: 5px;
     border: 1px solid var(--grey-color-5);
-    width: 25rem;
+    flex: 0 50%;
     font-size: 1.4rem;
 }
 
@@ -109,7 +109,7 @@
     border-right: 3px;
     border: 1px solid var(--grey-color-5);
     background-color: var(--white-color);
-    width: 25rem;
+    flex: 0 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;

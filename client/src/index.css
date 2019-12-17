@@ -75,12 +75,12 @@ button {
   align-items: center;
 }
 
-.justify-self {
-  justify-self: flex-start !important;
-}
-
 .set-center {
   text-align: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .error {
@@ -99,10 +99,6 @@ button {
   padding: .4rem .6rem;
   font-size: 1.3rem;
   margin: .8rem 0;
-}
-
-.space-between {
-  justify-content: space-between;
 }
 
 .rotate-90 {

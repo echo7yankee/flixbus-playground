@@ -6,8 +6,10 @@ import 'react-day-picker/lib/style.css';
 //components
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 
-export const Calendar = ({ onDayChange, isFirstCalendar }) => {
+export const Calendar = ({ onDayChange, isFirstCalendar, today }) => {
     return (
-        <DayPickerInput onDayChange={day => onDayChange(day, isFirstCalendar)} />
+        <DayPickerInput
+            value={today}
+            onDayChange={day => onDayChange(day, isFirstCalendar)} />
     )
 }

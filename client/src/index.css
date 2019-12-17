@@ -75,6 +75,10 @@ button {
   align-items: center;
 }
 
+.justify-self {
+  justify-self: flex-start !important;
+}
+
 .set-center {
   text-align: center;
 }
@@ -145,6 +149,29 @@ button {
 
 .pos-relative {
   position: relative;
+}
+
+.oneCalendarInput input {
+  width: 25rem;
+  
+}
+
+.twoCalendarInput input {
+  width: 12.5rem;
+}
+
+.twoCalendarInput .DayPickerInput:first-child input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; 
+  border-right: 0px;
+  padding-right: 0px;
+}
+
+.twoCalendarInput .DayPickerInput:last-child input {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-right: 0px;
+  padding-left: 1rem;
 }
 
 /* margin bottom */

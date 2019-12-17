@@ -7,6 +7,7 @@ import { IoMdPin, IoMdCalendar, IoMdRepeat, IoIosArrowForward } from 'react-icon
 //Components
 import { SearchInput } from '../SearchInput/SearchInput'
 import { Dropdown } from '../Dropdown/Dropdown';
+import { Calendar } from '../Calendar/Calendar'
 //Constants
 import { GO, GOBACK } from '../../Constants/constants';
 
@@ -126,6 +127,20 @@ export const SearchForm = () => {
         }
     }
 
+    const handleDayChange = (day, isFirstCalendar) => {
+        if (isFirstCalendar) {
+            setReservation({
+                ...reservation,
+                whenGo: day
+            })
+        } else if (!isFirstCalendar) {
+            setReservation({
+                ...reservation,
+                whenBack: day
+            })
+        }
+    }
+
 
     //customize date 
     const rawDate = new Date().toDateString();
@@ -140,7 +155,7 @@ export const SearchForm = () => {
     //Dropdown count limit message
     const dropdownMessageLimitCount = "The count can't be more than 9";
 
-    console.log(isDropdown)
+    console.log(reservation)
 
     return (
         <form className={style.form} onSubmit={handleSubmit}>
@@ -176,10 +191,17 @@ export const SearchForm = () => {
                 </div>
                 <div className={style.inputControlContainer}>
                     <div className={`${style.inputControl} ml-1`}>
-                        <label className={style.formLabel} htmlFor='whenGo'>Go</label>
+                        <div className='dflex space-between'>
+                            <label className={style.formLabel}>Go</label>
+                            {reservation.radio === GOBACK && <label className={style.formLabel}>Go-Back</label>}
+                        </div>
                         <div className={style.calendarContainer}>
                             <IoMdCalendar className={style.formIcons} />
-                            {customizedDate}
+                            <div className={`dflex ${reservation.radio === GOBACK ? 'twoCalendarInput' : 'oneCalendarInput'}`}>
+                                <Calendar onDayChange={handleDayChange} isFirstCalendar={true} />
+                                {reservation.radio === GOBACK && <Calendar onDayChange={handleDayChange} isFirstCalendar={false} />}
+                            </div>
+                            {/* {customizedDate} */}
                         </div>
                     </div>
                 </div>

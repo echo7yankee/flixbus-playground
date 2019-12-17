@@ -92,20 +92,16 @@
     border-radius: 50%;
     background:var(--green-color-1);
   }
-  
-  .calendarContainer {
-    padding:.9rem 0rem;
-    padding-left: 3rem;
-    border-right: 3px;
-    border: 1px solid var(--grey-color-5);
-    background-color: var(--white-color);
-    width: 25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.4rem;
+
+  .calendarContainer input {
+    padding: .8rem 3rem;
     border-radius: 5px;
-    cursor: pointer;
+    border: 1px solid var(--grey-color-5);
+    font-size: 1.4rem;
+  }
+
+  .calendarContainer input::placeholder {
+    font-size: 1.4rem;
   }
 
 .formPlace {

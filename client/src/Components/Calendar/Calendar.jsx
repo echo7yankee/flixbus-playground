@@ -6,16 +6,17 @@ import 'react-day-picker/lib/style.css';
 //components
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 
-export const Calendar = ({ onDayChange, isFirstCalendar, today, beforeDate }) => {
+export const Calendar = ({ onDayChange, isFirstCalendar, value, placeholder, beforeDate }) => {
 
     return (
         <DayPickerInput
-            value={today}
+            placeholder={placeholder}
+            value={value}
             dayPickerProps={{
                 modifiers: {
                     disabled: [
                         {
-                            before: beforeDate
+                            before: beforeDate || new Date()
                         }
                     ]
                 }

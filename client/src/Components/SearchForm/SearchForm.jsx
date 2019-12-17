@@ -17,8 +17,8 @@ export const SearchForm = () => {
         radio: GO,
         to: '',
         from: '',
-        whenGo: '',
-        whenBack: '',
+        whenGo: new Date(),
+        whenBack: new Date(),
         place: {
             adults: 1,
             children: 0,
@@ -204,14 +204,16 @@ export const SearchForm = () => {
                             <IoMdCalendar className={style.formIcons} />
                             <div className={`dflex ${reservation.radio === GOBACK ? 'twoCalendarInput' : 'oneCalendarInput'}`}>
                                 <Calendar
-                                    today={customizedDate}
+                                    placeholder={customizedDate}
+                                    value={reservation.whenGo}
                                     onDayChange={handleDayChange}
                                     beforeDate={null}
                                     isFirstCalendar={true} />
                                 {reservation.radio === GOBACK &&
                                     <Calendar
+                                        placeholder={customizedDate}
                                         beforeDate={reservation.whenGo}
-                                        today={customizedDate}
+                                        value={reservation.whenBack}
                                         onDayChange={handleDayChange}
                                         isFirstCalendar={false} />}
                             </div>

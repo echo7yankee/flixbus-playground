@@ -15,8 +15,8 @@ export const SearchForm = () => {
 
     const initState = {
         radio: GO,
-        to: '',
-        from: '',
+        to: 'Budapest',
+        from: 'Arad',
         whenGo: new Date(),
         whenBack: new Date(),
         place: {
@@ -205,15 +205,15 @@ export const SearchForm = () => {
                             <div className={`dflex ${reservation.radio === GOBACK ? 'twoCalendarInput' : 'oneCalendarInput'}`}>
                                 <Calendar
                                     placeholder={customizedDate}
-                                    value={reservation.whenGo}
+                                    value={whenGo}
                                     onDayChange={handleDayChange}
                                     beforeDate={null}
                                     isFirstCalendar={true} />
                                 {reservation.radio === GOBACK &&
                                     <Calendar
                                         placeholder={customizedDate}
-                                        beforeDate={reservation.whenGo}
-                                        value={reservation.whenBack}
+                                        beforeDate={whenGo}
+                                        value={whenBack}
                                         onDayChange={handleDayChange}
                                         isFirstCalendar={false} />}
                             </div>
